@@ -1,0 +1,235 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: rgba(121, 222, 236, 0.15);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.postImage{
+  height: 300px;
+  width: 300px;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+.postInImage{
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+#sameNewsLbl{
+  font-weight: bold;
+  font-size: 24px;
+  margin-left: 2.5%;
+}
+
+@media screen and (min-width: 400px){
+  .mainMenu{
+    background-color: rgba(53, 170, 222, 0.2);
+    position: relative;
+    padding: 30px;
+  }
+  .menuLink{
+    margin-left: -2px;
+    text-decoration: none;
+    padding: 10px;
+  }
+  .mainMenu nav{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    padding: 0.6%;
+    border: 2px solid #282c34;
+    border-radius: 10px;
+  }
+}
+
+@media screen and (max-width: 400px){
+  .mainMenu{
+    background-color: rgba(53, 170, 222, 0.2);
+    position: relative;
+    padding: 20px;
+  }
+  .menuLink{
+    margin-left: -2px;
+    text-decoration: none;
+    padding: 10px;
+  }
+  .mainMenu nav{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
+  }
+}
+@media screen and (max-width: 350px){
+  .mainMenu{
+    padding: 30px;
+  }
+}
+
+.sortBtn {
+  margin-left: 2.5%;
+  margin-top: 2.5%;
+  background-color: rgba(53, 170, 222, 0.2);
+  border: 2px outset rgba(53, 170, 222, 0.7);
+  border-radius: 7px;
+  padding: 5px;
+}
+
+.sortBtnText {
+  margin-left: 1%;
+  background-color: rgba(53, 170, 222, 0.2);
+  border: 2px outset rgba(53, 170, 222, 0.7);
+  border-radius: 7px;
+}
+
+.searchSmth {
+  margin-left: 2.5%;
+}
+
+@media screen and (min-width: 1200px) {
+  .hrSplitPost{
+    margin-right: 55%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .hrSplitPost{
+    margin-right: 30%;
+  }
+}
+@media screen and (max-width: 950px) {
+  .hrSplitPost{
+    margin-right: 0%;
+  }
+}
+
+
+
+.myBookmarks{
+  font-weight: bold;
+  font-size: 24px;
+  margin-left: 2.5%;
+}
+.pageBar{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2%;
+  margin-top: 1%;
+}
+
+.pageBarBtn{
+  background-color: rgba(118, 11, 190, 0.2);
+  border: 2px outset rgba(53, 170, 222, 0.7);
+  border-radius: 10px;
+  margin: 2px;
+}
+
+.pageBarBtnCurrent{
+  background-color: rgba(248, 6, 73, 0.5);
+  border: 2px outset rgba(53, 170, 222, 0.7);
+  border-radius: 10px;
+  margin: 2px;
+  font-weight: bold;
+}
+
+.pageBarBtnFsCurrent{
+  background-color: rgba(248, 6, 73, 0.5);
+  border: 2px outset rgba(53, 170, 222, 0.7);
+  border-radius: 10px;
+  margin: 2px;
+  font-weight: bold;
+}
+
+.pageBarBtnFs{
+  background-color: rgba(0, 114, 255, 0.5);
+  border: 2px outset rgba(53, 170, 222, 0.7);
+  border-radius: 10px;
+  margin: 2px;
+}
+
+
+
+.menuLink:hover{
+  background-color: rgba(19, 16, 16, 0.1);
+}
+
+
+.newsList {
+  list-style: none;
+}
+
+#newsTitle {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+#headerNews{
+  color: #000000;
+  position: relative;
+  text-decoration: none;
+}
+#postSummary{
+  padding-top: 2%;
+  padding-bottom: 2%;
+  max-width: 500px;
+  font-size: 18px;
+  margin-left: 10px;
+  font-style: italic;
+}
+
+.bookmarkBtn{
+  margin-left: 2.5%;
+  margin-top: 2.5%;
+  background-color: rgba(53, 170, 222, 0.2);
+  border: 2px outset rgba(53, 170, 222, 0.7);
+  border-radius: 7px;
+  padding: 5px;
+}
+
+
+#headerNews:hover::before{
+  transform: scaleX(1);
+}
+
+#headerNews:before{
+  background: rgba(0, 178, 238, 0.3);
+  content: "";
+  inset: 0;
+  position: absolute;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease-in-out;
+  z-index: -1;
+}
+.about{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid #282c34;
+  background-color: rgba(13, 234, 83, 0.1);
+}
+#listAbout{
+  padding: 20%;
+}
+
+
