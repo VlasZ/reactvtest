@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgba(121, 222, 236, 0.15);
+  background-color: rgba(1, 14, 10, 0.93);
 }
 
 code {
@@ -29,11 +29,12 @@ code {
   font-weight: bold;
   font-size: 24px;
   margin-left: 2.5%;
+  color: #f8f8f8;
 }
 
 @media screen and (min-width: 400px){
   .mainMenu{
-    background-color: rgba(53, 170, 222, 0.2);
+    background-color: rgb(4, 17, 4);
     position: relative;
     padding: 30px;
   }
@@ -41,6 +42,7 @@ code {
     margin-left: -2px;
     text-decoration: none;
     padding: 10px;
+    color: #f8f8f8;
   }
   .mainMenu nav{
     position: absolute;
@@ -49,14 +51,14 @@ code {
     margin-right: -50%;
     transform: translate(-50%, -50%);
     padding: 0.6%;
-    border: 2px solid #282c34;
+    border: 2px solid #49f30f;
     border-radius: 10px;
   }
 }
 
 @media screen and (max-width: 400px){
   .mainMenu{
-    background-color: rgba(53, 170, 222, 0.2);
+    background-color: rgb(4, 17, 4);
     position: relative;
     padding: 20px;
   }
@@ -83,21 +85,44 @@ code {
 .sortBtn {
   margin-left: 2.5%;
   margin-top: 2.5%;
-  background-color: rgba(53, 170, 222, 0.2);
-  border: 2px outset rgba(53, 170, 222, 0.7);
+  background-color: rgba(136, 238, 34, 0.2);
+  border: 2px outset rgba(60, 243, 33, 0.7);
   border-radius: 7px;
   padding: 5px;
+}
+.sortBtn:active{
+  background-color: rgba(27, 49, 7, 0.73);
 }
 
 .sortBtnText {
   margin-left: 1%;
-  background-color: rgba(53, 170, 222, 0.2);
-  border: 2px outset rgba(53, 170, 222, 0.7);
+  background-color: rgba(136, 238, 34, 0.2);
+  border: 2px outset rgba(60, 243, 33, 0.7);
   border-radius: 7px;
+}
+.sortBtnText:active{
+  background-color: rgba(27, 49, 7, 0.73);
 }
 
 .searchSmth {
-  margin-left: 2.5%;
+
+}
+.searchSmth table{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.searchSmth table td tr button{
+  margin-left: 30%;
+}
+.searchSmth table button{
+  color: #f8f8f8;
+}
+.searchSmth table td tr input{
+  border-radius: 20px;
+}
+.searchSmth table td label{
+  color: #f8f8f8;
 }
 
 @media screen and (min-width: 1200px) {
@@ -123,13 +148,14 @@ code {
   font-weight: bold;
   font-size: 24px;
   margin-left: 2.5%;
+  color: #f8f8f8;
 }
 .pageBar{
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 2%;
-  margin-top: 1%;
+  margin-top: 2%;
 }
 
 .pageBarBtn{
@@ -165,12 +191,13 @@ code {
 
 
 .menuLink:hover{
-  background-color: rgba(19, 16, 16, 0.1);
+  background-color: rgba(245, 245, 245, 0.1);
 }
 
 
 .newsList {
   list-style: none;
+  color: #f8f8f8;
 }
 
 #newsTitle {
@@ -179,7 +206,7 @@ code {
 }
 
 #headerNews{
-  color: #000000;
+  color: #f8f8f8;
   position: relative;
   text-decoration: none;
 }
@@ -195,12 +222,15 @@ code {
 .bookmarkBtn{
   margin-left: 2.5%;
   margin-top: 2.5%;
-  background-color: rgba(53, 170, 222, 0.2);
-  border: 2px outset rgba(53, 170, 222, 0.7);
+  background-color: rgba(41, 105, 26, 0.2);
+  border: 2px outset rgba(90, 222, 53, 0.7);
   border-radius: 7px;
   padding: 5px;
+  color: #f8f8f8;
 }
-
+.bookmarkBtn:active{
+  background-color: rgba(12, 3, 3, 0.65);
+}
 
 #headerNews:hover::before{
   transform: scaleX(1);
@@ -229,7 +259,8 @@ code {
   background-color: rgba(13, 234, 83, 0.1);
 }
 #listAbout{
-  padding: 20%;
+  margin-bottom: 20%;
+  color: #f8f8f8;
 }
 
 

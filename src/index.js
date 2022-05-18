@@ -189,11 +189,25 @@ export function News() {
     } else {
         return (
             <div>
-                <div>
-                    <button className="sortBtn" onClick={()=>handleOnClickSort("_sort=publishedAt:desc")}><FontAwesomeIcon icon={faScroll}/>  Сначала новые</button>
-                    <button className="sortBtn" onClick={()=>handleOnClickSort("_sort=publishedAt:asc")}><FontAwesomeIcon icon={faScroll}/>   Сначала старые</button>
-                    <p className="searchSmth"> Поиск по заголовку: <input id='inputTitle' type="text" /><button className="sortBtnText" onClick={()=>handleOnClickText("title_contains="+document.getElementById('inputTitle').value)}><FontAwesomeIcon icon={faSearch}/> Поиск</button></p>
-                    <p className="searchSmth">Поиск по содержанию: <input id='inputSumm' type="text" /><button className="sortBtnText" onClick={()=>handleOnClickText("summary_contains="+document.getElementById('inputSumm').value)}><FontAwesomeIcon icon={faSearch}/> Поиск</button></p>
+
+                <div className="searchSmth">
+                    <table>
+
+                        <td><label>Поиск по заголовку</label>
+                            <tr><input id='inputTitle' type="text" /><br /><button className="sortBtnText" onClick={()=>handleOnClickText("title_contains="+document.getElementById('inputTitle').value)}>Поиск</button></tr>
+                        </td>
+
+                        <td><label>Поиск по содержанию</label>
+                            <tr><input id='inputSumm' type="text" /><br /><button className="sortBtnText" onClick={()=>handleOnClickText("summary_contains="+document.getElementById('inputSumm').value)}>Поиск</button></tr>
+                        </td>
+                    </table>
+                    <br></br>
+                    <table>
+                        <tr>
+                            <td><button className="sortBtn" onClick={()=>handleOnClickSort("_sort=publishedAt:desc")}>Сначала новые</button></td>
+                            <td><button className="sortBtn" onClick={()=>handleOnClickSort("_sort=publishedAt:asc")}>Сначала старые</button></td>
+                        </tr>
+                    </table>
                 </div>
                 {
                     pageCount>1 ?
@@ -212,7 +226,7 @@ export function News() {
                     <li key={item.id}>
                         <p id="newsTitle"><Link id="headerNews" to={"/news/"+item.id}>{item.title}</Link></p>
                         <p><img className="postImage" src={item.imageUrl}/></p>
-                        <p>Дата публикации: {item.publishedAt}</p>
+                        <p>Дата публикации: {dateNews(item.publishedAt)}</p>
                         <hr className="hrSplitPost"/>
                     </li>
                 ))}
@@ -232,7 +246,14 @@ export function News() {
             </div>
         );
     }
+    function dateNews(date){
+        let t = date.replace('T', ' ');
+        let z = t.replace('Z', ' ');
+        return z;
+    }
 }
+
+
 
 
 export function New() {
