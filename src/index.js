@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faBookmark, faSearch, faScroll} from "@fortawesome/free-solid-svg-icons";
@@ -51,11 +50,14 @@ export const Navbar = () => (
     export function About() {
         return(
             <div className="about">
+
                 <ul id="listAbout">
                     <li><p>Одностраничное веб-приложение, для просмотра новостей космической тематики, на основе React</p></li>
                     <li><p>В процессе использовались языки: JavaScript, CSS, HTML</p></li>
                     <li><p>Выполнил студент группы РПИС-92, Акифьев Владислав</p></li>
+                    <button id="ButtonTheme" onClick={()=>changeTheme()}></button>
                 </ul>
+
             </div>
 
         );
@@ -63,6 +65,7 @@ export const Navbar = () => (
     export function PageNotFound(){
     return(
         <div>
+            <button id="ButtonTheme" onClick={()=>changeTheme()}></button>
             <h1>404</h1>
             <h2>Вы попали на несуществующую ссылку, пожалуйста вернитесь на <Link to={"/"}>главную страницу</Link></h2>
         </div>
@@ -181,7 +184,7 @@ export function News() {
         setPageNumber(value);
         getPageArray(pageCount);
     }
-
+    let bool;
     if (error) {
         return <div>Ошибка: {error.message}</div>;
     } else if (!isLoaded) {
@@ -209,6 +212,7 @@ export function News() {
                         </tr>
                     </table>
                 </div>
+                <button id="ButtonTheme" onClick={()=>changeTheme()}></button>
                 {
                     pageCount>1 ?
                         <div className="pageBar">
@@ -246,6 +250,7 @@ export function News() {
             </div>
         );
     }
+
     function dateNews(date){
         let t = date.replace('T', ' ');
         let z = t.replace('Z', ' ');
@@ -344,6 +349,7 @@ export function New() {
     } else {
         return (
             <div>
+                <button id="ButtonTheme" onClick={()=>changeTheme()}></button>
                 <ul className="newsList">
                     <li key={item.id}>
                         <p id="newsTitle">{item.title} {!isBookmarked ?
@@ -469,8 +475,11 @@ export function Bookmarks(){
             return <div>Загрузка...</div>;
         } else {
             return (
+
                 <div>
+
                     <span className="myBookmarks">Мои закладки:</span>
+
                     <hr className="hrSplit"/>
                     {
                         items.length!==0 && pageCount>1 ?
@@ -483,7 +492,9 @@ export function Bookmarks(){
                             </div>
                             : ""
                     }
+                    <button id="ButtonTheme" onClick={()=>changeTheme()}></button>
                     <hr className="hrSplit"/>
+
                     <ul className="newsList">
 
                         {items.length!==0 ? items.map(item => (
@@ -549,7 +560,9 @@ export function Bookmarks(){
 }
 
 // ========================================
-
+function changeTheme(){
+    document.body.classList.toggle("light-theme");
+}
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<Navbar />);
 
